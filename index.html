@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moon Mohsin Travels and Tours — Umrah, Ziyarat &amp; Tour Packages</title>
+<meta name="description" content="Book Umrah packages, Ziyarat tours, international holidays and flight tickets with Moon Mohsin Travels and Tours — a licensed travel agency trusted by thousands of travelers.">
+<meta property="og:title" content="Moon Mohsin Travels and Tours — Umrah, Ziyarat & Tour Packages">
+<meta property="og:description" content="Licensed Umrah, Ziyarat, tour and flight-ticketing specialists. Request a quote or chat with us on WhatsApp.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/images/ChatGPT%20Image%20Sep%2026,%202026,%2011_28_20%20PM.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="chrome-navbar"></div>
+
+<!-- HERO -->
+<header class="hero">
+  <svg class="hero__route" viewBox="0 0 1200 500" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M-20,420 C 250,380 350,200 620,230 S 980,120 1240,80" fill="none" stroke="#D9A75C" stroke-width="2" stroke-dasharray="2 12" stroke-linecap="round"/>
+    <circle cx="-20" cy="420" r="4" fill="#D9A75C"/>
+    <circle cx="620" cy="230" r="4" fill="#D9A75C"/>
+    <circle cx="1240" cy="80" r="4" fill="#D9A75C"/>
+  </svg>
+  <div class="container position-relative">
+    <div class="row">
+      <div class="col-lg-8">
+        <span class="hero__eyebrow">Umrah &middot; Ziyarat &middot; Tours &middot; Flight Tickets</span>
+        <h1 class="mt-2 mb-3">Thoughtfully planned journeys, from Makkah to anywhere you want to go.</h1>
+        <p class="lead mb-4">A licensed agency handling Umrah and Ziyarat travel, international holidays and flight bookings — with a real person on WhatsApp whenever you need one.</p>
+        <div class="hero__ctas">
+          <a href="contact.html#quote" class="btn btn-gold btn-lg">Book Your Journey</a>
+          <a href="packages.html" class="btn btn-outline-light-custom btn-lg">Explore Packages</a>
+        </div>
+        <div class="hero__badges">
+          <div><i class="bi bi-patch-check-fill"></i> Licensed travel agency</div>
+          <div><i class="bi bi-headset"></i> 24/7 WhatsApp support</div>
+          <div><i class="bi bi-shield-check"></i> Visa &amp; flight assistance included</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- QUICK INQUIRY -->
+<section class="quick-quote-section" id="quote">
+  <div class="container">
+    <div class="quick-quote-panel">
+      <div class="quick-quote__head">
+        <div>
+          <span class="section-label">Quick Quote</span>
+          <h2 class="h3">Plan your next trip</h2>
+        </div>
+        <p>Share the essentials and we'll help shape the rest of your journey.</p>
+      </div>
+      <form id="quickInquiryForm" class="row g-3 needs-validation" novalidate>
+        <div class="col-md-4">
+          <label class="form-label" for="quoteName">Full Name</label>
+          <input id="quoteName" type="text" name="name" class="form-control" autocomplete="name" required>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label" for="quotePhone">Phone Number</label>
+          <input id="quotePhone" type="tel" name="phone" class="form-control" autocomplete="tel" required>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label" for="quoteType">Travel Type</label>
+          <select id="quoteType" name="travelType" class="form-select" required>
+            <option value="" disabled selected>Select travel type</option>
+            <option>Umrah</option><option>Ziyarat</option><option>Tour Package</option>
+            <option>Flight / Ticket</option><option>Visa Services</option><option>Custom Tour</option><option>Other</option>
+          </select>
+        </div>
+        <div class="col-12 d-flex flex-wrap align-items-center gap-3">
+          <button type="submit" class="btn btn-gold"><i class="bi bi-whatsapp me-2"></i>Request a Quote</button>
+          <button class="btn btn-link quick-quote__optional p-0" type="button" data-bs-toggle="collapse" data-bs-target="#quoteDetails" aria-expanded="false" aria-controls="quoteDetails">
+            <i class="bi bi-plus-circle me-1"></i>Add trip details
+          </button>
+        </div>
+        <div class="collapse col-12" id="quoteDetails">
+          <div class="row g-3 pt-1">
+            <div class="col-md-4">
+              <label class="form-label" for="quoteDate">Preferred Travel Date</label>
+              <input id="quoteDate" type="date" name="date" class="form-control">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label" for="quoteTravelers">Number of Travelers</label>
+              <input id="quoteTravelers" type="number" min="1" name="travelers" class="form-control" placeholder="e.g. 2">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label" for="quoteDestination">Destination</label>
+              <input id="quoteDestination" type="text" name="destination" class="form-control" placeholder="e.g. Makkah, Istanbul...">
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="quoteMessage">Message</label>
+              <textarea id="quoteMessage" name="message" class="form-control" rows="2" placeholder="Anything else we should know?"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="col-12"><div class="form-success d-none">Thanks — WhatsApp should have opened with your details. We'll reply shortly!</div></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section>
+  <div class="container">
+    <div class="section-heading mx-auto reveal">
+      <span class="section-label d-block text-center">What We Do</span>
+      <h2>Everything for your trip, handled by one team</h2>
+    </div>
+    <div class="row g-4 mt-2">
+      <div class="col-6 col-lg-3"><div class="service-card"><div class="service-card__icon"><i class="bi bi-moon-stars-fill"></i></div><h3>Umrah Packages</h3><p>Economy to VIP, with hotels close to the Haram.</p></div></div>
+      <div class="col-6 col-lg-3"><div class="service-card"><div class="service-card__icon"><i class="bi bi-geo-alt-fill"></i></div><h3>Ziyarat Tours</h3><p>Makkah, Madinah, Iran &amp; Iraq guided visits.</p></div></div>
+      <div class="col-6 col-lg-3"><div class="service-card"><div class="service-card__icon"><i class="bi bi-airplane-fill"></i></div><h3>Flight Ticketing</h3><p>Domestic and international fare requests.</p></div></div>
+      <div class="col-6 col-lg-3"><div class="service-card"><div class="service-card__icon"><i class="bi bi-building"></i></div><h3>Hotel Booking</h3><p>Verified stays across every itinerary.</p></div></div>
+      <div class="col-6 col-lg-3"><div class="service-card"><div class="service-card__icon"><i class="bi bi-file-earmark-check-fill"></i></div><h3>Visa Assistance</h3><p>Documentation support, start to finish.</p></div></div>
+      <div class="col-6 col-lg-3"><div class="service-card"><div class="service-card__icon"><i class="bi bi-globe-americas"></i></div><h3>International Tours</h3><p>Curated holidays across popular destinations.</p></div></div>
+      <div class="col-6 col-lg-3"><div class="service-card"><div class="service-card__icon"><i class="bi bi-people-fill"></i></div><h3>Group Tours</h3><p>Departures for families, friends and societies.</p></div></div>
+      <div class="col-6 col-lg-3"><div class="service-card"><div class="service-card__icon"><i class="bi bi-sliders"></i></div><h3>Customized Tours</h3><p>An itinerary designed around your dates.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- UMRAH PREVIEW -->
+<section class="bg-white">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 reveal">
+      <div class="section-heading">
+        <span class="section-label">Umrah Packages</span>
+        <h2>Three ways to perform Umrah, all fully arranged</h2>
+      </div>
+      <a href="umrah.html" class="btn btn-outline-ink">View All Umrah Packages</a>
+    </div>
+    <div class="row g-4 mt-2" id="homeUmrahCards"></div>
+  </div>
+</section>
+
+<!-- ZIYARAT PREVIEW -->
+<section>
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 reveal">
+      <div class="section-heading">
+        <span class="section-label">Ziyarat</span>
+        <h2>Guided visits across Makkah, Madinah, Iran &amp; Iraq</h2>
+      </div>
+      <a href="ziyarat.html" class="btn btn-outline-ink">View All Ziyarat Tours</a>
+    </div>
+    <div class="row g-4 mt-2" id="homeZiyaratCards"></div>
+  </div>
+</section>
+
+<!-- TOUR PACKAGES PREVIEW -->
+<section class="bg-white">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 reveal">
+      <div class="section-heading">
+        <span class="section-label">Explore Our Packages</span>
+        <h2>Popular tours beyond religious travel</h2>
+      </div>
+      <a href="packages.html" class="btn btn-outline-ink">View All Packages</a>
+    </div>
+    <div class="row g-4 mt-2" id="homeTourCards"></div>
+  </div>
+</section>
+
+<!-- FLIGHT TEASER -->
+<section>
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6 reveal">
+        <span class="section-label">Flight / Tickets</span>
+        <h2>Need a flight? Send your route and dates.</h2>
+        <p>We don't display live seat availability here — every request goes to a consultant who checks fares directly with airlines and replies with real options.</p>
+        <a href="flights.html" class="btn btn-gold">Request Flight Quote</a>
+      </div>
+      <div class="col-lg-6">
+        <div class="img-placeholder-wrap" style="aspect-ratio:16/10;">
+          <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80" alt="Airplane wing above the clouds" class="w-100 h-100" style="object-fit:cover;" onerror="this.classList.add('img-missing')">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="bg-white">
+  <div class="container">
+    <div class="section-heading mx-auto reveal">
+      <span class="section-label d-block text-center">Why Choose Us</span>
+      <h2>Built around one consultant knowing your whole trip</h2>
+    </div>
+    <div class="row g-4 mt-2 text-center">
+      <div class="col-6 col-lg-3"><i class="bi bi-award fs-2" style="color:var(--gold)"></i><h3 class="h6 mt-3">Licensed &amp; Registered</h3><p class="small">Operating under [REGISTRATION AUTHORITY NAME].</p></div>
+      <div class="col-6 col-lg-3"><i class="bi bi-person-check fs-2" style="color:var(--gold)"></i><h3 class="h6 mt-3">One Dedicated Consultant</h3><p class="small">The same person handles your booking end to end.</p></div>
+      <div class="col-6 col-lg-3"><i class="bi bi-cash-coin fs-2" style="color:var(--gold)"></i><h3 class="h6 mt-3">Transparent Pricing</h3><p class="small">No hidden charges added after booking.</p></div>
+      <div class="col-6 col-lg-3"><i class="bi bi-headset fs-2" style="color:var(--gold)"></i><h3 class="h6 mt-3">Support While Traveling</h3><p class="small">WhatsApp support throughout your trip.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST / REGISTRATION -->
+<section class="trust-strip">
+  <div class="container">
+    <div class="row g-4" id="statsRow"></div>
+    <p class="text-center small mt-3 mb-0" style="color:rgba(255,255,255,0.6);">
+      Reg. No. 873210 &middot; License [LICENSE NUMBER] &middot; Regulated by [REGISTRATION AUTHORITY NAME]
+    </p>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="bg-white">
+  <div class="container">
+    <div class="section-heading mx-auto reveal">
+      <span class="section-label d-block text-center">Customer Reviews</span>
+      <h2>What travelers say</h2>
+    </div>
+    <div class="row g-4 mt-2" id="reviewsRow"></div>
+    <div class="form-panel mt-4">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-4">
+          <span class="section-label">Your Experience</span>
+          <h3 class="h4">Share a customer review</h3>
+          <p class="mb-0">Send us your feedback on WhatsApp. Reviews are shared on the website only with your permission.</p>
+        </div>
+        <div class="col-lg-8">
+          <form id="reviewForm" class="row g-3 needs-validation" novalidate>
+            <div class="col-md-6">
+              <label class="form-label" for="reviewName">Your Name</label>
+              <input id="reviewName" type="text" name="name" class="form-control" autocomplete="name" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="reviewTrip">Trip Type</label>
+              <select id="reviewTrip" name="tripType" class="form-select" required>
+                <option value="" disabled selected>Select trip type</option>
+                <option>Umrah</option><option>Ziyarat</option><option>Tour Package</option><option>Flight / Ticket</option><option>Other</option>
+              </select>
+            </div>
+            <div class="col-md-5">
+              <label class="form-label" for="reviewRating">Your Rating</label>
+              <select id="reviewRating" name="rating" class="form-select" required>
+                <option value="" disabled selected>Select a rating</option>
+                <option value="5">5 stars</option><option value="4">4 stars</option><option value="3">3 stars</option><option value="2">2 stars</option><option value="1">1 star</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="reviewText">Your Review</label>
+              <textarea id="reviewText" name="review" class="form-control" rows="3" required></textarea>
+            </div>
+            <div class="col-12 d-flex flex-wrap align-items-center gap-3">
+              <button type="submit" class="btn btn-gold"><i class="bi bi-whatsapp me-2"></i>Send Review</button>
+              <span class="text-muted small">Opens WhatsApp for review approval</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section>
+  <div class="container">
+    <div class="section-heading mx-auto reveal">
+      <span class="section-label d-block text-center">Travel Memories</span>
+      <h2>Hotels, groups and Ziyarat moments</h2>
+    </div>
+    <div class="row g-3 mt-2" id="homeGallery"></div>
+    <div class="text-center mt-4"><a href="contact.html" class="btn btn-outline-ink">Share Your Photos With Us</a></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="text-center" style="background: var(--ink); color:#fff;">
+  <div class="container">
+    <h2 style="color:#fff;">Ready to plan your trip?</h2>
+    <p style="color:rgba(255,255,255,0.75); max-width:520px; margin:0 auto 1.5rem;">Message us on WhatsApp for the fastest reply, or fill in the quick inquiry form above.</p>
+    <a class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener" id="ctaWhatsapp"><i class="bi bi-whatsapp me-2"></i>Chat on WhatsApp</a>
+  </div>
+</section>
+
+<div id="chrome-footer"></div>
+
+<!-- Package Details Modal -->
+<div class="modal fade" id="detailsModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title" id="detailsModalLabel"></h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body" id="detailsModalBody"></div>
+    </div>
+  </div>
+</div>
+<!-- Gallery Modal -->
+<div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title" id="galleryModalCaption"></h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body"><img id="galleryModalImg" class="w-100" style="border-radius:8px;" alt="Gallery photo"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderUmrahCards("homeUmrahCards", SITE_CONFIG.umrahPackages);
+    renderZiyaratCards("homeZiyaratCards", SITE_CONFIG.ziyaratPackages.slice(0,4));
+    renderTourCards("homeTourCards", SITE_CONFIG.tourPackages.slice(0,3));
+    renderGallery("homeGallery");
+    document.getElementById("ctaWhatsapp").href = waLink();
+
+    document.getElementById("statsRow").innerHTML = SITE_CONFIG.company.stats.map(s => `
+      <div class="col-6 col-lg-3">
+        <div class="stat-block ${s.isPlaceholder ? 'stat-block--placeholder' : ''}">
+          <div class="stat-block__value">${s.value}</div>
+          <div class="stat-block__label">${s.label}</div>
+          ${s.isPlaceholder ? '<span class="placeholder-note">Sample — add real figure</span>' : ''}
+        </div>
+      </div>`).join("");
+
+    document.getElementById("reviewsRow").innerHTML = SITE_CONFIG.reviews.map(r => `
+      <div class="col-md-6 col-lg-4">
+        <div class="review-card h-100">
+          ${r.isPlaceholder ? '<span class="placeholder-tag">Sample review</span>' : ''}
+          <div class="review-card__stars">${"★".repeat(r.rating)}${"☆".repeat(5-r.rating)}</div>
+          <p class="review-card__text">${r.text}</p>
+          <div class="review-card__footer">
+            <div class="review-avatar">${r.name.replace(/[\[\]]/g,'').charAt(0)}</div>
+            <div><div class="review-card__name">${r.name}</div><div class="review-card__type">${r.packageType}</div></div>
+          </div>
+        </div>
+      </div>`).join("");
+
+    wireInquiryForm("quickInquiryForm", d => `Hello, I'd like a quote.\nName: ${d.name}\nPhone: ${d.phone}\nTravel type: ${d.travelType}\nDestination: ${d.destination||"-"}\nDate: ${d.date||"-"}\nTravelers: ${d.travelers||"-"}\nMessage: ${d.message||"-"}`);
+    wireInquiryForm("reviewForm", d => `Hello, I'd like to share a customer review.\nName: ${d.name}\nTrip type: ${d.tripType}\nRating: ${d.rating}/5\nReview: ${d.review}\nPlease confirm before publishing this review.`);
+  });
+</script>
+</body>
+</html>

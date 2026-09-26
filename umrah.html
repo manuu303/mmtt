@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Umrah Packages — Moon Mohsin Travels and Tours</title>
+<meta name="description" content="Compare Economy, Executive and Premium Umrah packages including hotels, transport, visa and flights.">
+<link rel="icon" type="image/png" href="assets/images/ChatGPT%20Image%20Sep%2026,%202026,%2011_28_20%20PM.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="chrome-navbar"></div>
+
+<header class="page-hero">
+  <div class="container">
+    <div class="breadcrumb-custom mb-2"><a href="index.html">Home</a> / Umrah</div>
+    <h1>Umrah Packages</h1>
+    <p>Economy to Premium — every package includes visa, flights and Makkah &amp; Madinah Ziyarat unless noted.</p>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="row g-4" id="umrahAllCards"></div>
+  </div>
+</section>
+
+<section class="bg-white">
+  <div class="container">
+    <div class="section-heading mx-auto reveal text-center">
+      <span class="section-label">Good to Know</span>
+      <h2>What's included in every Umrah package</h2>
+    </div>
+    <div class="row g-4 mt-2 text-center">
+      <div class="col-6 col-lg-3"><i class="bi bi-file-earmark-check fs-2" style="color:var(--gold)"></i><h3 class="h6 mt-3">Umrah Visa</h3><p class="small">Handled fully by our documentation team.</p></div>
+      <div class="col-6 col-lg-3"><i class="bi bi-airplane fs-2" style="color:var(--gold)"></i><h3 class="h6 mt-3">Return Flights</h3><p class="small">Economy class round-trip included.</p></div>
+      <div class="col-6 col-lg-3"><i class="bi bi-building fs-2" style="color:var(--gold)"></i><h3 class="h6 mt-3">Makkah &amp; Madinah Hotels</h3><p class="small">Distance and category vary by tier.</p></div>
+      <div class="col-6 col-lg-3"><i class="bi bi-bus-front fs-2" style="color:var(--gold)"></i><h3 class="h6 mt-3">Ground Transport</h3><p class="small">Airport transfers and inter-city travel.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="text-center" style="background: var(--ink); color:#fff;">
+  <div class="container">
+    <h2 style="color:#fff;">Not sure which tier fits your budget?</h2>
+    <p style="color:rgba(255,255,255,0.75); max-width:520px; margin:0 auto 1.5rem;">Send us your group size and travel month — we'll recommend a package on WhatsApp.</p>
+    <a class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener" id="ctaWhatsapp"><i class="bi bi-whatsapp me-2"></i>Ask on WhatsApp</a>
+  </div>
+</section>
+
+<div id="chrome-footer"></div>
+
+<div class="modal fade" id="detailsModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title" id="detailsModalLabel"></h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body" id="detailsModalBody"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderUmrahCards("umrahAllCards", SITE_CONFIG.umrahPackages);
+    document.getElementById("ctaWhatsapp").href = waLink("Assalamu alaikum, I'd like help choosing an Umrah package.");
+  });
+</script>
+</body>
+</html>
