@@ -1,9 +1,15 @@
+PACKAGE FLYERS
+==============
+The supplied package flyers are stored in assets/images/packages as
+flyer-01.jpeg through flyer-31.jpeg and are configured in
+assets/js/config.js. Keep these filenames stable when replacing an image.
+
 ONLINE IMAGES
 =============
-Package and gallery photography is served from Unsplash's image CDN and
-configured in assets/js/config.js. The About and Flights photos use the
-same CDN directly in their page markup. An internet connection is required
-for these images to load.
+The remaining package and gallery photography is served from Unsplash's
+image CDN and configured in assets/js/config.js. The About and Flights
+photos use the same CDN directly in their page markup. An internet
+connection is required for those images to load.
 
 The Contact page uses a Google Maps embed centered on the office address.
 

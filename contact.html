@@ -63,9 +63,8 @@
         <span class="section-label">Our Office</span>
         <h2 class="h3 mb-3">Visit or write to us</h2>
         <div class="img-placeholder-wrap mb-3" style="aspect-ratio:16/10;">
-          <iframe src="https://maps.google.com/maps?q=Office%20%2301%20Saddique%20E%20Akbar%20Market%20Main%20Bazaar%20Gurmani%20City%20District%20Kotaddu%20Multan%20Panjab%20Pakistan&output=embed" title="Map to Moon Mohsin Travels and Tours" class="w-100 h-100 border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <iframe id="officeMap" title="Map to Moon Mohsin Travels and Tours" class="w-100 h-100 border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
         </div>
-        <p class="small mb-0">Add a Google Maps embed URL in <code>assets/js/config.js</code> (<code>company.mapEmbedUrl</code>) to show a live map here instead of this placeholder.</p>
       </div>
     </div>
   </div>
@@ -75,10 +74,11 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/config.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js?v=20260927-details"></script>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const c = SITE_CONFIG.company;
+    document.getElementById("officeMap").src = c.mapEmbedUrl;
     document.getElementById("contactCards").innerHTML = `
       <div class="col-md-6 col-lg-3"><div class="service-card text-center"><div class="service-card__icon mx-auto"><i class="bi bi-telephone-fill"></i></div><h3>Call Us</h3>${c.phoneNumbers.map(phone => `<p class="mb-1"><a href="${phone.link}">${phone.display}</a></p>`).join("")}</div></div>
       <div class="col-md-6 col-lg-3"><div class="service-card text-center"><div class="service-card__icon mx-auto"><i class="bi bi-whatsapp"></i></div><h3>WhatsApp</h3><p><a href="${waLink()}" target="_blank" rel="noopener">${c.whatsappDisplay}</a></p><p><a href="${c.whatsappChannel}" target="_blank" rel="noopener">Follow our channel</a></p></div></div>

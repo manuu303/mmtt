@@ -173,7 +173,22 @@ function initReveal() {
 
 /* ---------- generic package card renderer (data-driven, reusable) ---------- */
 function packageImg(src, alt) {
+  if (!src) return `<div class="package-card__no-image" aria-label="${alt} details">${alt}</div>`;
   return `<img src="${src}" alt="${alt}" loading="lazy" onerror="this.classList.add('img-missing')">`;
+}
+
+function relatedPackageImage(pkg) {
+  if (pkg.image) return pkg.image;
+  const text = `${pkg.category || ""} ${pkg.region || ""} ${pkg.destination || ""} ${pkg.title || pkg.name || ""}`.toLowerCase();
+  if (text.includes("iran")) return TRAVEL_IMAGES.airplane;
+  if (text.includes("karbala")) return TRAVEL_IMAGES.kaabaWide;
+  if (text.includes("iraq") || text.includes("najaf")) return TRAVEL_IMAGES.kaabaWide;
+  if (text.includes("umrah") || text.includes("makkah") || text.includes("madinah") || pkg.tier) return TRAVEL_IMAGES.kaabaCrowd;
+  if (text.includes("malaysia")) return TRAVEL_IMAGES.kualaLumpur;
+  if (text.includes("thailand")) return TRAVEL_IMAGES.bangkok;
+  if (text.includes("international") || text.includes("tour")) return TRAVEL_IMAGES.airplane;
+  if (text.includes("visa") || text.includes("flight") || text.includes("ticket") || text.includes("travel service")) return TRAVEL_IMAGES.airplane;
+  return TRAVEL_IMAGES.airplane;
 }
 
 function renderUmrahCards(containerId, items) {
@@ -183,7 +198,7 @@ function renderUmrahCards(containerId, items) {
     <div class="col-12 col-md-6 col-lg-4">
       <div class="package-card h-100">
         <div class="package-card__media">
-          ${packageImg(p.image, p.name)}
+          ${packageImg(relatedPackageImage(p), p.name)}
           <span class="tier-badge tier-badge--${p.tier.toLowerCase()}">${p.tier}</span>
         </div>
         <div class="package-card__body">
@@ -202,7 +217,7 @@ function renderUmrahCards(containerId, items) {
             <span class="availability availability--${p.availability === "Available" ? "ok" : "limited"}">${p.availability}</span>
           </div>
           <div class="package-card__actions">
-            <button class="btn btn-outline-ink btn-sm" data-bs-toggle="modal" data-bs-target="#detailsModal" data-package-id="${p.id}" data-package-type="umrah">View Details</button>
+            <button class="btn btn-outline-ink btn-sm" data-package-detail data-package-id="${p.id}" data-package-type="umrah">View Details</button>
             <a class="btn btn-gold btn-sm" href="${waLink('Assalamu alaikum, I would like to book the ' + p.name + '.')}" target="_blank" rel="noopener">Book Now</a>
           </div>
           <a class="whatsapp-inline" href="${waLink('Hello, I have a question about the ' + p.name + '.')}" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> WhatsApp Inquiry</a>
@@ -219,7 +234,7 @@ function renderZiyaratCards(containerId, items) {
     <div class="col-12 col-md-6 col-lg-3">
       <div class="package-card package-card--compact h-100">
         <div class="package-card__media">
-          ${packageImg(p.image, p.name)}
+          ${packageImg(relatedPackageImage(p), p.name)}
           <span class="tier-badge">${p.region}</span>
         </div>
         <div class="package-card__body">
@@ -236,7 +251,7 @@ function renderZiyaratCards(containerId, items) {
             <div class="package-card__price">${formatPrice(p.price, "USD")}</div>
           </div>
           <div class="package-card__actions">
-            <button class="btn btn-outline-ink btn-sm" data-bs-toggle="modal" data-bs-target="#detailsModal" data-package-id="${p.id}" data-package-type="ziyarat">View Details</button>
+            <button class="btn btn-outline-ink btn-sm" data-package-detail data-package-id="${p.id}" data-package-type="ziyarat">View Details</button>
             <a class="btn btn-gold btn-sm" href="${waLink('Hello, I would like to book the ' + p.name + '.')}" target="_blank" rel="noopener">Book Now</a>
           </div>
         </div>
@@ -254,7 +269,7 @@ function renderTourCards(containerId, items) {
     <div class="col-12 col-md-6 col-lg-4 tour-item" data-category="${p.category}">
       <div class="package-card h-100">
         <div class="package-card__media">
-          ${packageImg(p.image, p.title)}
+          ${packageImg(relatedPackageImage(p), p.title)}
           <span class="tier-badge">${p.category}</span>
         </div>
         <div class="package-card__body">
@@ -265,15 +280,16 @@ function renderTourCards(containerId, items) {
             ${p.highlights.map(h => `<li><i class="bi bi-check2"></i> ${h}</li>`).join("")}
           </ul>
           <div class="package-card__footer">
-            <div class="package-card__price">From ${formatPrice(p.startingPrice, "USD")}</div>
+            <div class="package-card__price">From ${formatPrice(p.startingPrice, p.currency || "PKR")}</div>
           </div>
           <div class="package-card__actions">
-            <button class="btn btn-outline-ink btn-sm" data-bs-toggle="modal" data-bs-target="#detailsModal" data-package-id="${p.id}" data-package-type="tour">View Details</button>
+            <button class="btn btn-outline-ink btn-sm" data-package-detail data-package-id="${p.id}" data-package-type="tour">View Details</button>
             <a class="btn btn-gold btn-sm" href="${waLink('Hello, I would like to book: ' + p.title)}" target="_blank" rel="noopener">Book Now</a>
           </div>
         </div>
       </div>
     </div>`).join("");
+  attachDetailModalHandlers();
 }
 
 function findPackageById(id, type) {
@@ -281,22 +297,61 @@ function findPackageById(id, type) {
   return (map[type] || []).find(p => p.id === id);
 }
 
+function renderPackageDetails(pkg) {
+  const body = document.getElementById("detailsModalBody");
+  const title = document.getElementById("detailsModalLabel");
+  if (!body || !title || !pkg) return false;
+
+  title.textContent = pkg.name || pkg.title || "Package Details";
+  const category = pkg.category || (pkg.tier ? "Umrah Packages" : pkg.region) || "Travel package";
+  const destination = pkg.destination || (pkg.makkahHotel ? "Makkah & Madinah" : pkg.region) || "Worldwide travel";
+  const duration = pkg.duration || pkg.nights || "Flexible";
+  const price = pkg.startingPrice ? formatPrice(pkg.startingPrice, pkg.currency || "PKR") : pkg.price ? formatPrice(pkg.price, pkg.currency || "PKR") : "Contact for price";
+  const highlights = Array.isArray(pkg.highlights) ? pkg.highlights : Array.isArray(pkg.included) ? pkg.included : [
+    pkg.makkahHotel && `Makkah hotel: ${pkg.makkahHotel}`,
+    pkg.madinahHotel && `Madinah hotel: ${pkg.madinahHotel}`,
+    pkg.roomSharing && `Room sharing: ${pkg.roomSharing}`,
+    pkg.transport && `Transport: ${pkg.transport}`,
+    pkg.meals && `Meals: ${pkg.meals}`,
+    pkg.visaIncluded && "Visa included",
+    pkg.flightIncluded && "Flight included",
+    pkg.ziyaratIncluded && `Ziyarat: ${pkg.ziyaratIncluded}`
+  ].filter(Boolean);
+  const description = pkg.description || (pkg.region ? `${pkg.name || "Ziyarat package"} with guided travel arrangements.` : pkg.makkahHotel ? `${pkg.name || "Umrah package"} with visa, flight, hotel and transport arrangements.` : "Contact us for complete package information.");
+  const image = packageImg(relatedPackageImage(pkg), pkg.name || pkg.title || "Package");
+  body.innerHTML = `${image}
+    <div class="detail-modal__lead">
+      <span class="detail-modal__category">${category}</span>
+      <p>${destination}</p>
+    </div>
+    <div class="detail-modal__summary">
+      <div><span>Duration</span><strong>${duration}</strong></div>
+      <div><span>Starting price</span><strong>${price}</strong></div>
+    </div>
+    <div class="detail-modal__section">
+      <h6>Package Overview</h6>
+      <p>${description}</p>
+    </div>
+    <div class="detail-modal__section">
+      <h6>Package Details</h6>
+      ${highlights.length ? `<ul class="detail-modal__list">${highlights.map(item => `<li>${item}</li>`).join("")}</ul>` : "<p>Contact us for complete package details.</p>"}
+    </div>`;
+  return true;
+}
+
 function attachDetailModalHandlers() {
-  document.querySelectorAll('[data-bs-target="#detailsModal"]').forEach(btn => {
-    btn.addEventListener("click", () => {
-      const pkg = findPackageById(btn.dataset.packageId, btn.dataset.packageType);
-      if (!pkg) return;
-      const body = document.getElementById("detailsModalBody");
-      const title = document.getElementById("detailsModalLabel");
-      if (title) title.textContent = pkg.name || pkg.title;
-      if (body) {
-        const rows = Object.entries(pkg)
-          .filter(([k]) => !["id", "image", "icon"].includes(k))
-          .map(([k, v]) => `<div class="detail-row"><span>${k.replace(/([A-Z])/g, " $1")}</span><strong>${Array.isArray(v) ? v.join(", ") : v}</strong></div>`)
-          .join("");
-        body.innerHTML = `${packageImg(pkg.image, pkg.name || pkg.title)}<div class="mt-3">${rows}</div>`;
-      }
-    });
+  if (window.packageDetailsHandlerAttached) return;
+  window.packageDetailsHandlerAttached = true;
+  document.addEventListener("click", event => {
+    const btn = event.target.closest("[data-package-detail]");
+    if (!btn) return;
+    const pkg = findPackageById(btn.dataset.packageId, btn.dataset.packageType);
+    if (!renderPackageDetails(pkg)) return;
+    event.preventDefault();
+    const modalEl = document.getElementById("detailsModal");
+    if (modalEl && window.bootstrap && bootstrap.Modal) {
+      window.setTimeout(() => new bootstrap.Modal(modalEl).show(), 0);
+    }
   });
 }
 

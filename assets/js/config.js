@@ -39,7 +39,7 @@ const SITE_CONFIG = {
     whatsappNumber: "923189653208", // digits only, country code, no + or spaces
     email: "itx123faizan@gmail.com",
     address: "Office #01 Saddique E Akbar Market Main Bazaar Gurmani City District Kotaddu Multan Panjab Pakistan",
-    mapEmbedUrl: "", // paste a Google Maps embed src URL here when available
+    mapEmbedUrl: "https://maps.google.com/maps?q=30.269232602963186,70.95651623116441&output=embed",
     registration: {
       govRegistrationNumber: "873210",
       licenseNumber: "[LICENSE NUMBER]",
@@ -73,183 +73,149 @@ const SITE_CONFIG = {
   // ---------------- UMRAH PACKAGES ----------------
   umrahPackages: [
     {
-      id: "umrah-economy",
-      tier: "Economy",
-      name: "Barakah Economy Umrah",
-      nights: "10 nights",
-      makkahHotel: "3-star hotel, 700m from Haram",
-      madinahHotel: "3-star hotel, 600m from Masjid Nabawi",
-      roomSharing: "Quad sharing",
-      transport: "Shared A/C coach, airport & inter-city transfers",
-      visaIncluded: true,
-      flightIncluded: true,
-      ziyaratIncluded: "Makkah & Madinah Ziyarat included",
-      meals: "Breakfast & dinner",
-      price: 0, // 0 = "Contact for price" until real pricing supplied
-      currency: "USD",
-      availability: "Available",
-      image: TRAVEL_IMAGES.kaabaCrowd,
-      icon: "moon-stars"
+      id: "umrah-overview-section", tier: "Custom", name: "Umrah Packages Overview", nights: "10, 15 or 21 days", makkahHotel: "Trusted accommodation", madinahHotel: "Trusted accommodation", roomSharing: "Multiple room options", transport: "Transfers included", meals: "Contact for meal plan", visaIncluded: true, flightIncluded: true, ziyaratIncluded: "Available by package", price: 0, currency: "PKR", availability: "Available", image: null, icon: "moon-stars"
     },
     {
-      id: "umrah-executive",
-      tier: "Executive",
-      name: "Rihla Executive Umrah",
-      nights: "12 nights",
-      makkahHotel: "4-star hotel, 250m from Haram",
-      madinahHotel: "4-star hotel, 200m from Masjid Nabawi",
-      roomSharing: "Triple sharing",
-      transport: "Private A/C coach, airport & inter-city transfers",
-      visaIncluded: true,
-      flightIncluded: true,
-      ziyaratIncluded: "Makkah & Madinah Ziyarat + guided orientation",
-      meals: "Full board (breakfast, lunch, dinner)",
-      price: 0,
-      currency: "USD",
-      availability: "Available",
-      image: TRAVEL_IMAGES.makkahClock,
-      icon: "building-mosque"
+      id: "umrah-sasta-section", tier: "Economy", name: "Sasta Umrah Package", nights: "15, 21 or 28 days", makkahHotel: "Clean A/C hotels near Haram", madinahHotel: "Clean A/C hotels near Haram", roomSharing: "Sharing options available", transport: "A/C Jeddah, Makkah and Madina transport", meals: "Contact for meal plan", visaIncluded: true, flightIncluded: true, ziyaratIncluded: "Complete Makkah & Madina Ziyarats", price: 0, currency: "PKR", availability: "Available", image: null, icon: "moon-stars"
     },
     {
-      id: "umrah-premium",
-      tier: "Premium",
-      name: "Noor Premium Umrah (VIP)",
-      nights: "14 nights",
-      makkahHotel: "5-star hotel, Haram view, 100m walk",
-      madinahHotel: "5-star hotel, 50m from Masjid Nabawi",
-      roomSharing: "Double / private sharing",
-      transport: "Private vehicle with dedicated driver",
-      visaIncluded: true,
-      flightIncluded: true,
-      ziyaratIncluded: "Full guided Ziyarat with private scholar-led group",
-      meals: "Full board, premium dining",
-      price: 0,
-      currency: "USD",
-      availability: "Limited seats",
-      image: TRAVEL_IMAGES.kaabaWide,
-      icon: "crown"
+      id: "umrah-20-days-section", tier: "Executive", name: "20 Days Umrah Package", nights: "20 days: 11 Makkah + 8 Madinah nights", makkahHotel: "Manasik Al Hijra, 700m", madinahHotel: "Juhaina Al Masi, 400m", roomSharing: "Sharing / Quad / Triple / Double", transport: "Transport by bus", meals: "Contact for meal plan", visaIncluded: true, flightIncluded: true, ziyaratIncluded: "Included", price: 258000, currency: "PKR", availability: "Available", image: null, icon: "building-mosque"
+    },
+    {
+      id: "umrah-21-days-section", tier: "Economy", name: "21 Days Economy Umrah Group", nights: "21 days: 12 Makkah + 8 Madinah nights", makkahHotel: "Ajwa Ziyafa, shuttle service", madinahHotel: "Kinan Madinah, 900m", roomSharing: "Sharing / Quad / Triple / Double", transport: "Transport by bus", meals: "Contact for meal plan", visaIncluded: true, flightIncluded: true, ziyaratIncluded: "Available by package", price: 257000, currency: "PKR", availability: "Available", image: null, icon: "moon-stars"
+    },
+    {
+      id: "umrah-october-section", tier: "Group", name: "Your October Umrah Group", nights: "20 days", makkahHotel: "Jaddat Al Khalil or Snood Mawten", madinahHotel: "Kunooz Al Taqwa, 400m", roomSharing: "Two hotel options", transport: "Contact for transport plan", meals: "No extra food BRN charges", visaIncluded: true, flightIncluded: true, ziyaratIncluded: "Available by package", price: 239500, currency: "PKR", availability: "Available", image: null, icon: "moon-stars"
+    },
+    {
+      id: "umrah-3-4-5-star-section", tier: "Premium", name: "3, 4, 5 Star & Economy Umrah", nights: "Customizable", makkahHotel: "3, 4 or 5 star options", madinahHotel: "3, 4 or 5 star options", roomSharing: "Contact for room plan", transport: "Transportation included", meals: "Contact for meal plan", visaIncluded: true, flightIncluded: true, ziyaratIncluded: "Available by package", price: 265000, currency: "PKR", availability: "Available", image: null, icon: "crown"
+    },
+    {
+      id: "umrah-15-days-section", tier: "Standard", name: "15 Days Umrah Package", nights: "15 days", makkahHotel: "Mukaram Al Hijra", madinahHotel: "Elaf Quba", roomSharing: "Sharing / Quad / Triple / Double", transport: "Transportation included", meals: "Contact for meal plan", visaIncluded: true, flightIncluded: true, ziyaratIncluded: "Available by package", price: 230000, currency: "PKR", availability: "Available", image: null, icon: "building-mosque"
+    },
+    {
+      id: "umrah-azadi-section", tier: "Seasonal", name: "Happy Azadi Month Umrah", nights: "Customizable", makkahHotel: "Premium hotel options", madinahHotel: "Premium hotel options", roomSharing: "Contact for room plan", transport: "Comfortable transport", meals: "Contact for meal plan", visaIncluded: true, flightIncluded: true, ziyaratIncluded: "Contact for details", price: 0, currency: "PKR", availability: "Available", image: null, icon: "moon-stars"
     }
   ],
 
   // ---------------- ZIYARAT PACKAGES ----------------
   ziyaratPackages: [
     {
-      id: "ziyarat-makkah",
-      region: "Makkah",
-      name: "Makkah Ziyarat Tour",
-      duration: "1 day",
-      departure: "Daily departures from Makkah hotels",
-      hotel: "Included with Umrah stay",
-      transport: "A/C coach with guide",
-      included: ["Jabal al-Noor", "Jabal Thawr (viewpoint)", "Mina, Muzdalifah, Arafat", "Masjid al-Jinn"],
-      price: 0,
-      image: TRAVEL_IMAGES.kaabaCrowd
+      id: "eid-karbala-ziyarat-section", region: "Iraq", name: "Eid-ul-Fitr Karbala Group Ziarat", duration: "11 days", departure: "19 March 2026", hotel: "Hotels included", transport: "Transport included", included: ["Karbala", "Najaf", "Kazmain", "Samarra", "Balad", "All Ziyaraat", "Air ticket", "Visa", "Meals", "Religious guide"], price: 235000, image: null
     },
     {
-      id: "ziyarat-madinah",
-      region: "Madinah",
-      name: "Madinah Ziyarat Tour",
-      duration: "1 day",
-      departure: "Daily departures from Madinah hotels",
-      hotel: "Included with Umrah stay",
-      transport: "A/C coach with guide",
-      included: ["Quba Mosque", "Masjid Qiblatain", "Uhud Mountain", "Baqi Cemetery (exterior)"],
-      price: 0,
-      image: TRAVEL_IMAGES.madinah
+      id: "iran-ziyarat-section", region: "Iran", name: "Iran Ziarat Group Package", duration: "15 days: Mashhad 8 nights + Qom 6 nights", departure: "October 2026", hotel: "Mashhad and Qom accommodation", transport: "Contact for transport plan", included: ["Mashhad", "Qom", "Base PKR 160,000 / USD 570", "Services fee PKR 20,000", "IATA Certified 27343993", "ZGO Registered No. 25212"], price: 160000, image: null
     },
     {
-      id: "ziyarat-iran",
-      region: "Iran",
-      name: "Iran Ziyarat Tour",
-      duration: "8 days / 7 nights",
-      departure: "Monthly group departures",
-      hotel: "3–4 star hotels, twin sharing",
-      transport: "Domestic flights + A/C coach",
-      included: ["Qom", "Mashhad — Imam Reza (A.S.) shrine", "Shiraz", "Tehran city tour"],
-      price: 0,
-      image: "https://images.pexels.com/photos/30812225/pexels-photo-30812225/free-photo-of-stunning-imam-reza-shrine-at-sunset-in-mashhad.jpeg?auto=compress&cs=tinysrgb&w=1200"
-    },
-    {
-      id: "ziyarat-iraq",
-      region: "Iraq",
-      name: "Iraq Ziyarat Tour",
-      duration: "7 days / 6 nights",
-      departure: "Monthly group departures",
-      hotel: "3–4 star hotels, twin sharing",
-      transport: "Domestic transfers + A/C coach",
-      included: ["Najaf", "Karbala", "Kadhimiya (Baghdad)", "Samarra"],
-      price: 0,
-      image: "https://www.iraqinews.com/wp-content/uploads/2021/11/Imam-Ali-Holy-Shrine-Najaf-1.jpg"
+      id: "arbaeen-iraq-section", region: "Iraq", name: "Arbaeen 2026 In Iraq Ziarat", duration: "Classic 14 days / Shuttle 10 days", departure: "Arbaeen 2026", hotel: "Accommodation included", transport: "Transport included", included: ["Najaf to Karbala walk", "Karbala", "Najaf", "Kazmain", "Samarra", "Balad", "Air ticket", "Visa", "Meals", "Religious guide"], price: 1390, image: null
     }
   ],
 
   // ---------------- GENERAL TOUR PACKAGES ----------------
   tourPackages: [
     {
-      id: "tour-turkiye",
-      category: "International Tours",
-      destination: "Türkiye",
-      title: "Istanbul & Cappadocia Explorer",
-      duration: "7 days / 6 nights",
-      startingPrice: 0,
-      description: "Ottoman palaces, Bosphorus cruises and hot-air balloons over Cappadocia's valleys.",
-      highlights: ["Blue Mosque & Hagia Sophia", "Bosphorus dinner cruise", "Cappadocia balloon ride"],
-      image: TRAVEL_IMAGES.cappadocia
+      id: "eid-karbala-ziyarat", category: "Ziyarat", destination: "Karbala, Najaf, Kazmain, Samarra & Balad", title: "Eid-ul-Fitr Karbala Group Ziarat", duration: "11 days", startingPrice: 235000, currency: "PKR",
+      description: "Only Iraq Eid-ul-Fitr Ziarat package including all listed services and Ziyaraat.", highlights: ["PKR 235,000 per person", "Punjab departure: +USD 130", "Iran extension, 8 days: +USD 400", "Departure: 19 March 2026", "Air ticket, visa, transport, hotels, meals and religious guide", "Karbala, Najaf, Kazmain, Samarra, Balad and all Ziyaraat"], image: null
     },
     {
-      id: "tour-malaysia",
-      category: "Family Tours",
-      destination: "Malaysia",
-      title: "Kuala Lumpur & Genting Family Escape",
-      duration: "6 days / 5 nights",
-      startingPrice: 0,
-      description: "Theme parks, cable cars and city sightseeing built around family pacing.",
-      highlights: ["Petronas Towers", "Genting Highlands", "Batu Caves"],
-      image: TRAVEL_IMAGES.kualaLumpur
+      id: "umrah-overview", category: "Umrah Packages", destination: "Makkah & Madinah", title: "Umrah Packages Overview", duration: "10, 15 or 21 days", startingPrice: 0, currency: "PKR",
+      description: "Umrah packages with trusted accommodation for Hajj and Umrah pilgrims.", highlights: ["10, 15 and 21 day options", "Visa", "Ticket", "Hotel", "Transfer", "Insurance", "Etihad, SereneAir, AirSial, Emirates, Qatar, Airblue, PIA and Saudi Arabian Airlines", "Approved by Nusuk"], image: null
     },
     {
-      id: "tour-maldives",
-      category: "Honeymoon Tours",
-      destination: "Maldives",
-      title: "Overwater Villa Honeymoon",
-      duration: "5 days / 4 nights",
-      startingPrice: 0,
-      description: "Private overwater villas, sunset cruises and reef snorkelling for two.",
-      highlights: ["Overwater villa stay", "Sunset dolphin cruise", "Private candlelit dinner"],
-      image: TRAVEL_IMAGES.maldives
+      id: "thailand-visa-new", category: "Visa Services", destination: "Thailand", title: "Thailand Visa Service", duration: "Visa processing service", startingPrice: 0, currency: "PKR",
+      description: "Thailand visa processing at the best price.", highlights: ["Best-price processing", "Primary contact: 0345-5000-951"], image: null
     },
     {
-      id: "tour-northern-pk",
-      category: "Domestic Tours",
-      destination: "Northern Pakistan",
-      title: "Hunza & Skardu Valley Tour",
-      duration: "8 days / 7 nights",
-      startingPrice: 0,
-      description: "Snow-capped peaks, glacial lakes and valley culture across the north.",
-      highlights: ["Attabad Lake", "Passu Cones", "Skardu Valley"],
-      image: TRAVEL_IMAGES.northernPakistan
+      id: "qatar-independence-campaign-new", category: "Flight Tickets", destination: "Pakistan to worldwide destinations", title: "Qatar Airways Pakistan Independence Day Campaign", duration: "Travel: 7 Aug 2026 - 31 Mar 2027", startingPrice: 0, currency: "PKR",
+      description: "Qatar Airways economy and premium campaign from Pakistan, excluding Doha and Medina.", highlights: ["Origin: PK", "One way and return", "GDS discount up to 15%", "NDC discount up to 25%", "Sales: 5 Aug - 14 Aug 2026", "Limited RBDs"], image: null
     },
     {
-      id: "tour-thailand-group",
-      category: "Group Tours",
-      destination: "Thailand",
-      title: "Bangkok & Phuket Group Tour",
-      duration: "6 days / 5 nights",
-      startingPrice: 0,
-      description: "A guided group itinerary through city temples and island beaches.",
-      highlights: ["Grand Palace", "Phi Phi Islands cruise", "Local market tour"],
-      image: TRAVEL_IMAGES.bangkok
+      id: "azerbaijan-eid-package", category: "International Tours", destination: "Baku, Azerbaijan", title: "Eid-ul-Fitr Azerbaijan Package", duration: "4 nights / 5 days", startingPrice: 239000, currency: "PKR",
+      description: "Special Eid package for Baku, Azerbaijan.", highlights: ["Travel date: 23 March", "Special Eid package price: PKR 239,000"], image: null
     },
     {
-      id: "tour-custom",
-      category: "Customized Tours",
-      destination: "Anywhere",
-      title: "Build Your Own Itinerary",
-      duration: "Flexible",
-      startingPrice: 0,
-      description: "Tell us your dates, budget and interests — we design the rest around you.",
-      highlights: ["Flexible dates", "Tailored hotels & transport", "Dedicated travel consultant"],
-      image: TRAVEL_IMAGES.airplane
+      id: "four-countries-tour-new", category: "International Tours", destination: "Malaysia, Singapore, Thailand & Sri Lanka", title: "4 Countries In One Go", duration: "11 days / 10 nights", startingPrice: 499000, currency: "PKR",
+      description: "Four-country package with all taxes and service charges included.", highlights: ["Travel date: 7 April 2026", "Twin sharing", "Visa, hotel, ticket, transfer, tours and breakfast", "Special offer: Rs. 499,000"], image: null
+    },
+    {
+      id: "europe-student-visa-new", category: "Visa Services", destination: "Europe", title: "Student Visa for Europe", duration: "Admissions open 2026", startingPrice: 0, currency: "PKR",
+      description: "Study in Europe admissions and student visa support.", highlights: ["Student visa assistance", "University admission support", "Complete documentation guidance", "Visa file preparation", "Interview guidance", "Valid passport", "Educational documents", "IELTS / language requirement", "Financial documents"], image: null
+    },
+    {
+      id: "happy-azadi-brand", category: "Travel Services", destination: "Pakistan", title: "Happy Azadi Month", duration: "Seasonal campaign", startingPrice: 0, currency: "PKR",
+      description: "Proud to be Pakistani and proud of our freedom.", highlights: ["Flights", "Hotels", "Visas", "Tour packages"], image: null
+    },
+    {
+      id: "sasta-umrah", category: "Umrah Packages", destination: "Makkah & Madinah", title: "Sasta Umrah Package", duration: "15, 21 or 28 days", startingPrice: 0, currency: "PKR",
+      description: "Economy Umrah package with complete Makkah and Madina Ziyarats.", highlights: ["AC transport: Jeddah, Makkah and Madina", "Major airline tickets available", "Clean AC hotels near Haram", "Direct Multan to Jeddah flights", "Emirates, Saudia, PIA, Airblue and AirSial"], image: null
+    },
+    {
+      id: "uae-done-base-new", category: "Visa Services", destination: "United Arab Emirates", title: "UAE Done Base Visa", duration: "Processing service", startingPrice: 0, currency: "PKR",
+      description: "UAE Done Base Visa for single male or female applicants below 45 years.", highlights: ["Passport: 1st and 2nd page", "NIC front and back", "White background picture", "6 months bank statement"], image: null
+    },
+    {
+      id: "riyadh-air-ticketing", category: "Flight Tickets", destination: "Riyadh to Islamabad / Lahore", title: "Riyadh Air Ticketing Facility", duration: "From August 2026", startingPrice: 0, currency: "PKR",
+      description: "Ticketing facility available for Riyadh Air.", highlights: ["Riyadh to Islamabad: daily from August 14", "Riyadh to Lahore: three weekly from August 18", "Boeing 787 Dreamliner", "Spacious cabin", "Advanced entertainment", "Premium dining"], image: null
+    },
+    {
+      id: "umrah-20-days-new", category: "Umrah Packages", destination: "Makkah & Madinah", title: "20 Days Umrah Package", duration: "20 days", startingPrice: 258000, currency: "PKR",
+      description: "20-day package with Ziyarat, guide, visa, direct airline, hotel and bus transport.", highlights: ["Makkah: Manasik Al Hijra, 700m, 11 nights", "Madinah: Juhaina Al Masi, 400m, 8 nights", "Sharing: PKR 258,000", "Quad: PKR 267,500", "Triple: PKR 288,000", "Double: PKR 323,500"], image: null
+    },
+    {
+      id: "japan-visit-visa-new", category: "Visa Services", destination: "Japan", title: "Japan Visit Visa Consultancy", duration: "Appointment required", startingPrice: 50000, currency: "PKR",
+      description: "Japan visit visa consultancy with appointment support.", highlights: ["Original price: PKR 70,000", "Discount price: PKR 50,000"], image: null
+    },
+    {
+      id: "umrah-21-days-economy-new", category: "Umrah Packages", destination: "Makkah & Madinah", title: "21 Days Economy Umrah Group", duration: "21 days: Makkah 12 nights + Madinah 8 nights", startingPrice: 257000, currency: "PKR",
+      description: "Economy group package partnered with Pakistan International Airlines.", highlights: ["Makkah: Ajwa Ziyafa, shuttle service", "Madinah: Kinan Madinah, 900m", "Sharing: PKR 257,000", "Quad: PKR 263,000", "Triple: PKR 272,000", "Double: PKR 290,000", "September travel date blocks", "Visa, accommodation, bus transport and airline ticket"], image: null
+    },
+    {
+      id: "october-umrah-20-days-new", category: "Umrah Packages", destination: "Makkah & Madinah", title: "Your October Umrah Group", duration: "20 days", startingPrice: 239500, currency: "PKR",
+      description: "October Umrah group with two hotel options, no extra food BRN charges and direct airline ticket.", highlights: ["Option 1: PKR 244,500 — Jaddat Al Khalil 1200m / Kunooz Al Taqwa 400m", "Option 2: PKR 239,500 — Snood Mawten shuttle / Kunooz Al Taqwa 400m", "No extra food BRN charges", "Direct airline ticket"], image: null
+    },
+    {
+      id: "uae-visit-visa-new", category: "Visa Services", destination: "United Arab Emirates", title: "UAE Visit Visa — 30 / 60 Days", duration: "30 or 60 days", startingPrice: 0, currency: "PKR",
+      description: "Family visit visa service from Pakistan.", highlights: ["30-day visit visa", "60-day visit visa", "Family visit visa", "Limited visa availability — DM today"], image: null
+    },
+    {
+      id: "iran-ziyarat-october-2026", category: "Ziyarat", destination: "Iran — Mashhad & Qom", title: "Iran Ziarat Group Package", duration: "15 days: Mashhad 8 nights + Qom 6 nights", startingPrice: 160000, currency: "PKR",
+      description: "October 2026 Iran Ziarat group package with Mashhad and Qom stays.", highlights: ["Base: PKR 160,000 / USD 570", "Standard services fee: PKR 20,000", "Lahore / Islamabad: +USD 120", "IATA 27343993", "ZGO Registered No. 25212", "Contacts: 0345-2203077, 0328-2626526, 0328-5000951, 0345-5000951", "Landline: 021-32236800"], image: null
+    },
+    {
+      id: "umrah-3-4-5-star-overview", category: "Umrah Packages", destination: "Makkah & Madinah", title: "3, 4, 5 Star & Economy Umrah", duration: "2026 / 1448H", startingPrice: 270000, currency: "PKR",
+      description: "Customizable Umrah packages with direct flight, visa, hotel and transportation.", highlights: ["Starting from PKR 270,000", "Direct flight", "Visa", "Hotel", "Transportation", "Agent: Mohsin Aslam", "Contacts: 0328-5000951, 0345-5000951"], image: null
+    },
+    {
+      id: "umrah-september-group-2026", category: "Umrah Packages", destination: "Makkah & Madinah", title: "Umrah Group Package — September 2026", duration: "11 days; quad sharing per adult", startingPrice: 290000, currency: "PKR",
+      description: "September 2026 group Umrah departing from Karachi on 25 September 2026.", highlights: ["Makkah: 6 nights — Hotel Olayan Palace or similar", "Madina: 4 nights — Hotel Gulnar Taiba", "Extra USD 160 from Punjab", "Contacts: 0328-2626526, 0345-2203077, 0328-5000951", "Office #01, Main Bazar Karmani Shah, Kot Addu, Muzaffargarh"], image: null
+    },
+    {
+      id: "umrah-3-4-5-star-second", category: "Umrah Packages", destination: "Makkah & Madinah", title: "3, 4, 5 Star & Economy Umrah Package", duration: "2026 / 1448H", startingPrice: 265000, currency: "PKR",
+      description: "Umrah package with flight, visa, hotels and transfers.", highlights: ["Starting from PKR 265,000", "Flight", "Visa", "Hotels", "Transfers", "Contacts: 0318-9653208, 0332-9750868"], image: null
+    },
+    {
+      id: "three-countries-tour", category: "International Tours", destination: "Thailand, Malaysia & Sri Lanka", title: "3 Countries — 1 Amazing Journey", duration: "8 nights / 9 days", startingPrice: 390000, currency: "PKR",
+      description: "Bangkok, Kuala Lumpur and Colombo international tour package.", highlights: ["Thailand / Bangkok: 3 nights, Oct 12-15", "Malaysia / Kuala Lumpur: 3 nights, Oct 15-18", "Sri Lanka / Colombo: 2 nights, Oct 18-20", "Airport-to-hotel transport", "Tours and excursions", "3/4 star hotel with breakfast"], image: null
+    },
+    {
+      id: "umrah-15-day-overview", category: "Umrah Packages", destination: "Makkah & Madinah", title: "15 Days Umrah Package", duration: "15 days", startingPrice: 230000, currency: "PKR",
+      description: "Umrah package with Makkah and Madina accommodation, transport, insurance, return ticket and visa.", highlights: ["Makkah: Mukaram Al Hijra", "Madina: Elaf Quba", "Sharing: PKR 230,000", "Quad: PKR 245,000", "Triple: PKR 255,000", "Double: PKR 285,000"], image: null
+    },
+    {
+      id: "travel-services-overview-new", category: "Travel Services", destination: "Worldwide", title: "Travel Services Overview", duration: "Year-round service", startingPrice: 0, currency: "PKR",
+      description: "Core travel services available from Moon Mohsin Travels & Tours.", highlights: ["Flight booking", "Umrah packages", "Hotel booking", "Visa services", "Travel insurance"], image: null
+    },
+    {
+      id: "happy-azadi-umrah-new", category: "Umrah Packages", destination: "Makkah & Madinah", title: "Happy Azadi Month Umrah", duration: "Customizable", startingPrice: 0, currency: "PKR",
+      description: "Pakistan Azadi Month Umrah service focused on a comfortable and trusted journey.", highlights: ["Best packages", "Premium hotels", "Air ticket assistance", "Comfortable transport", "Pakistan Zindabad"], image: null
+    },
+    {
+      id: "saudi-multiple-visa-new", category: "Visa Services", destination: "Saudi Arabia", title: "1 Year Multiple Saudi Visa", duration: "1 year validity", startingPrice: 0, currency: "PKR",
+      description: "Multiple-entry Saudi visa for business, tourism and family visits.", highlights: ["1 year validity", "Multiple entry", "Safe and reliable", "Quick processing", "Expert support", "Document assistance", "Hassle-free service"], image: null
+    },
+    {
+      id: "arbaeen-iraq-2026-new", category: "Ziyarat", destination: "Najaf → Karbala, Iraq", title: "Arbaeen 2026 In Iraq Ziarat", duration: "Classic 14 days / Shuttle 10 days", startingPrice: 1390, currency: "USD",
+      description: "Arbaeen 2026 Azadari in Karbala with a walk from Najaf to Karbala.", highlights: ["Classic: DBL $1,790; TRP $1,590; QUAD $1,390", "Shuttle: TRP $1,450; QUAD $1,190", "Approximately +$150 from Lahore / Islamabad", "Air-ticket, visa, accommodation, meals and transport", "Molana Syed Asif Abbas Shah and Noha Khown accompany group"], image: null
     }
   ],
 

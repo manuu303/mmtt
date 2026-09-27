@@ -133,7 +133,7 @@
 </section>
 
 <!-- UMRAH PREVIEW -->
-<section class="bg-white">
+<section class="bg-white d-none">
   <div class="container">
     <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 reveal">
       <div class="section-heading">
@@ -147,7 +147,7 @@
 </section>
 
 <!-- ZIYARAT PREVIEW -->
-<section>
+<section class="d-none">
   <div class="container">
     <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 reveal">
       <div class="section-heading">
@@ -165,8 +165,8 @@
   <div class="container">
     <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 reveal">
       <div class="section-heading">
-        <span class="section-label">Explore Our Packages</span>
-        <h2>Popular tours beyond religious travel</h2>
+        <span class="section-label">Featured Packages</span>
+        <h2>Start with one of our featured journeys</h2>
       </div>
       <a href="packages.html" class="btn btn-outline-ink">View All Packages</a>
     </div>
@@ -313,11 +313,9 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/config.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js?v=20260927-details"></script>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    renderUmrahCards("homeUmrahCards", SITE_CONFIG.umrahPackages);
-    renderZiyaratCards("homeZiyaratCards", SITE_CONFIG.ziyaratPackages.slice(0,4));
     renderTourCards("homeTourCards", SITE_CONFIG.tourPackages.slice(0,3));
     renderGallery("homeGallery");
     document.getElementById("ctaWhatsapp").href = waLink();
