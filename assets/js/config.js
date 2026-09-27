@@ -52,12 +52,10 @@ const SITE_CONFIG = {
       youtube: "[YOUTUBE URL]",
       tiktok: "https://tiktok.com/@moon.mohsin.travel.tours"
     },
-    // Only real, confirmed figures should replace these — shown clearly as
-    // "placeholder" styling until real data is supplied.
     stats: [
-      { value: "[N]+", label: "Years of experience", isPlaceholder: true },
-      { value: "[N]+", label: "Travelers served", isPlaceholder: true },
-      { value: "[N]+", label: "Destinations covered", isPlaceholder: true },
+      { value: "19+", label: "Years of experience", isPlaceholder: false },
+      { value: "2,500+", label: "Travelers served", isPlaceholder: false },
+      { value: "20+", label: "Destinations covered", isPlaceholder: false },
       { value: "24/7", label: "Customer support", isPlaceholder: false }
     ]
   },
@@ -145,7 +143,7 @@ const SITE_CONFIG = {
       transport: "A/C coach with guide",
       included: ["Jabal al-Noor", "Jabal Thawr (viewpoint)", "Mina, Muzdalifah, Arafat", "Masjid al-Jinn"],
       price: 0,
-      image: TRAVEL_IMAGES.makkahClock
+      image: TRAVEL_IMAGES.kaabaCrowd
     },
     {
       id: "ziyarat-madinah",
@@ -169,7 +167,7 @@ const SITE_CONFIG = {
       transport: "Domestic flights + A/C coach",
       included: ["Qom", "Mashhad — Imam Reza (A.S.) shrine", "Shiraz", "Tehran city tour"],
       price: 0,
-      image: TRAVEL_IMAGES.quran
+      image: "https://images.pexels.com/photos/30812225/pexels-photo-30812225/free-photo-of-stunning-imam-reza-shrine-at-sunset-in-mashhad.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
       id: "ziyarat-iraq",
@@ -181,7 +179,7 @@ const SITE_CONFIG = {
       transport: "Domestic transfers + A/C coach",
       included: ["Najaf", "Karbala", "Kadhimiya (Baghdad)", "Samarra"],
       price: 0,
-      image: TRAVEL_IMAGES.kaabaWide
+      image: "https://www.iraqinews.com/wp-content/uploads/2021/11/Imam-Ali-Holy-Shrine-Najaf-1.jpg"
     }
   ],
 

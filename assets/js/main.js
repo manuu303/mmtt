@@ -145,6 +145,19 @@ function initScrollShrink() {
   });
 }
 
+/* ---------- homepage hero slideshow ---------- */
+function initHeroSlideshow() {
+  const slides = Array.from(document.querySelectorAll(".hero__slide"));
+  if (slides.length < 2 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  let activeIndex = slides.findIndex(slide => slide.classList.contains("hero__slide--active"));
+  if (activeIndex < 0) activeIndex = 0;
+  window.setInterval(() => {
+    slides[activeIndex].classList.remove("hero__slide--active");
+    activeIndex = (activeIndex + 1) % slides.length;
+    slides[activeIndex].classList.add("hero__slide--active");
+  }, 6000);
+}
+
 /* ---------- reveal on scroll (used sparingly, section headers only) ---------- */
 function initReveal() {
   const items = document.querySelectorAll(".reveal");
@@ -331,5 +344,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderChrome();
   renderFloatingContact();
   initScrollShrink();
+  initHeroSlideshow();
   initReveal();
 });
