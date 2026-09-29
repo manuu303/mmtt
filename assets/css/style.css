@@ -274,3 +274,12 @@ section { padding: 4.5rem 0; }
 
 /* wide-screen container control */
 @media (min-width: 1600px) { .container { max-width: 1440px; } }
+
+/* smooth client-side page transition */
+#page-content {
+  animation: pageFadeIn 0.22s ease-out;
+}
+@keyframes pageFadeIn {
+  from { opacity: 0.75; transform: translateY(3px); }
+  to { opacity: 1; transform: translateY(0); }
+}

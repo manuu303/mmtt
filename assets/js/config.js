@@ -37,7 +37,7 @@ const SITE_CONFIG = {
     whatsappChannel: "https://whatsapp.com/channel/0029Vb8j6IeGzzKTntS4fG3f",
     whatsappDisplay: "03189653208",
     whatsappNumber: "923189653208", // digits only, country code, no + or spaces
-    email: "itx123faizan@gmail.com",
+    email: "Info.moonmohsintravelers@gmail.com",
     address: "Office #01 Saddique E Akbar Market Main Bazaar Gurmani City District Kotaddu Multan Panjab Pakistan",
     mapEmbedUrl: "https://maps.google.com/maps?q=30.269232602963186,70.95651623116441&output=embed",
     registration: {
@@ -47,8 +47,8 @@ const SITE_CONFIG = {
       additionalDetails: "[ADDITIONAL REGISTRATION / APPROVAL DETAILS]"
     },
     social: {
-      facebook: "[FACEBOOK URL]",
-      instagram: "[INSTAGRAM URL]",
+      facebook: "https://www.facebook.com/share/18D6A9eUtq/",
+      instagram: "https://www.instagram.com/malik._.faizan___?stkn=MTNlaG5ibmJubHJzYg==",
       youtube: "[YOUTUBE URL]",
       tiktok: "https://tiktok.com/@moon.mohsin.travel.tours"
     },

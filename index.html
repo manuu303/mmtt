@@ -19,6 +19,7 @@
 
 <div id="chrome-navbar"></div>
 
+<main id="page-content">
 <!-- HERO -->
 <header class="hero">
   <div class="hero__background" aria-hidden="true">
@@ -277,7 +278,10 @@
       <h2>Hotels, groups and Ziyarat moments</h2>
     </div>
     <div class="row g-3 mt-2" id="homeGallery"></div>
-    <div class="text-center mt-4"><a href="contact.html" class="btn btn-outline-ink">Share Your Photos With Us</a></div>
+    <div class="text-center mt-4 d-flex justify-content-center gap-3 flex-wrap">
+      <a href="contact.html" class="btn btn-outline-ink">Share Your Photos With Us</a>
+      <a id="homeInstagramBtn" href="https://www.instagram.com/malik._.faizan___?stkn=MTNlaG5ibmJubHJzYg==" target="_blank" rel="noopener" class="btn btn-outline-ink"><i class="bi bi-instagram me-2"></i>Follow on Instagram</a>
+    </div>
   </div>
 </section>
 
@@ -289,6 +293,7 @@
     <a class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener" id="ctaWhatsapp"><i class="bi bi-whatsapp me-2"></i>Chat on WhatsApp</a>
   </div>
 </section>
+</main>
 
 <div id="chrome-footer"></div>
 
@@ -319,6 +324,10 @@
     renderTourCards("homeTourCards", SITE_CONFIG.tourPackages.slice(0,3));
     renderGallery("homeGallery");
     document.getElementById("ctaWhatsapp").href = waLink();
+    const homeIgBtn = document.getElementById("homeInstagramBtn");
+    if (homeIgBtn && SITE_CONFIG.company.social && SITE_CONFIG.company.social.instagram) {
+      homeIgBtn.href = SITE_CONFIG.company.social.instagram;
+    }
 
     document.getElementById("statsRow").innerHTML = SITE_CONFIG.company.stats.map(s => `
       <div class="col-6 col-lg-3">

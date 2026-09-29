@@ -15,6 +15,7 @@
 <body>
 <div id="chrome-navbar"></div>
 
+<main id="page-content">
 <header class="page-hero">
   <div class="container">
     <div class="breadcrumb-custom mb-2"><a href="index.html">Home</a> / Contact Us</div>
@@ -65,10 +66,23 @@
         <div class="img-placeholder-wrap mb-3" style="aspect-ratio:16/10;">
           <iframe id="officeMap" title="Map to Moon Mohsin Travels and Tours" class="w-100 h-100 border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
         </div>
+        <div class="card p-3 border-0 shadow-sm mt-3" style="background:var(--sand-light,#faf8f5);">
+          <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+            <div>
+              <strong class="d-block text-dark" style="font-size:0.95rem;">Connect with us on Social Media</strong>
+              <span class="text-muted small">Trip updates, packages and announcements</span>
+            </div>
+            <div class="d-flex gap-2">
+              <a id="contactFacebookBtn" href="https://www.facebook.com/share/18D6A9eUtq/" target="_blank" rel="noopener" class="btn btn-outline-dark btn-sm"><i class="bi bi-facebook me-1" style="color: #1877F2;"></i>Facebook</a>
+              <a id="contactInstagramBtn" href="https://www.instagram.com/malik._.faizan___?stkn=MTNlaG5ibmJubHJzYg==" target="_blank" rel="noopener" class="btn btn-outline-dark btn-sm"><i class="bi bi-instagram me-1" style="color: #E1306C;"></i>Instagram</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+</main>
 
 <div id="chrome-footer"></div>
 
@@ -79,6 +93,14 @@
   document.addEventListener("DOMContentLoaded", () => {
     const c = SITE_CONFIG.company;
     document.getElementById("officeMap").src = c.mapEmbedUrl;
+    const igBtn = document.getElementById("contactInstagramBtn");
+    if (igBtn && c.social && c.social.instagram) {
+      igBtn.href = c.social.instagram;
+    }
+    const fbBtn = document.getElementById("contactFacebookBtn");
+    if (fbBtn && c.social && c.social.facebook) {
+      fbBtn.href = c.social.facebook;
+    }
     document.getElementById("contactCards").innerHTML = `
       <div class="col-md-6 col-lg-3"><div class="service-card text-center"><div class="service-card__icon mx-auto"><i class="bi bi-telephone-fill"></i></div><h3>Call Us</h3>${c.phoneNumbers.map(phone => `<p class="mb-1"><a href="${phone.link}">${phone.display}</a></p>`).join("")}</div></div>
       <div class="col-md-6 col-lg-3"><div class="service-card text-center"><div class="service-card__icon mx-auto"><i class="bi bi-whatsapp"></i></div><h3>WhatsApp</h3><p><a href="${waLink()}" target="_blank" rel="noopener">${c.whatsappDisplay}</a></p><p><a href="${c.whatsappChannel}" target="_blank" rel="noopener">Follow our channel</a></p></div></div>
