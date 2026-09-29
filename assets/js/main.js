@@ -108,9 +108,6 @@ function renderChrome() {
               <li><i class="bi bi-geo-alt-fill me-2"></i>${c.address}</li>
               ${c.phoneNumbers.map(phone => `<li><a href="${phone.link}"><i class="bi bi-telephone-fill me-2"></i>${phone.display}</a></li>`).join("")}
               <li><a href="${waLink()}" target="_blank" rel="noopener"><i class="bi bi-whatsapp me-2"></i>${c.whatsappDisplay}</a></li>
-              <li><a href="${c.whatsappChannel}" target="_blank" rel="noopener"><i class="bi bi-whatsapp me-2"></i>WhatsApp Channel</a></li>
-              ${social.instagram && !social.instagram.includes("[") ? `<li><a href="${social.instagram}" target="_blank" rel="noopener"><i class="bi bi-instagram me-2"></i>Instagram</a></li>` : ""}
-              ${social.facebook && !social.facebook.includes("[") ? `<li><a href="${social.facebook}" target="_blank" rel="noopener"><i class="bi bi-facebook me-2"></i>Facebook</a></li>` : ""}
               <li><a href="mailto:${c.email}"><i class="bi bi-envelope-fill me-2"></i>${c.email}</a></li>
             </ul>
           </div>
