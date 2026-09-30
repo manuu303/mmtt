@@ -218,15 +218,16 @@ function packageImg(src, alt) {
 function relatedPackageImage(pkg) {
   if (pkg.image) return pkg.image;
   const text = `${pkg.category || ""} ${pkg.region || ""} ${pkg.destination || ""} ${pkg.title || pkg.name || ""}`.toLowerCase();
-  if (text.includes("iran")) return TRAVEL_IMAGES.airplane;
-  if (text.includes("karbala")) return TRAVEL_IMAGES.kaabaWide;
-  if (text.includes("iraq") || text.includes("najaf")) return TRAVEL_IMAGES.kaabaWide;
-  if (text.includes("umrah") || text.includes("makkah") || text.includes("madinah") || pkg.tier) return TRAVEL_IMAGES.kaabaCrowd;
-  if (text.includes("malaysia")) return TRAVEL_IMAGES.kualaLumpur;
-  if (text.includes("thailand")) return TRAVEL_IMAGES.bangkok;
-  if (text.includes("international") || text.includes("tour")) return TRAVEL_IMAGES.airplane;
-  if (text.includes("visa") || text.includes("flight") || text.includes("ticket") || text.includes("travel service")) return TRAVEL_IMAGES.airplane;
-  return TRAVEL_IMAGES.airplane;
+  if (text.includes("iran")) return TRAVEL_IMAGES.iranZiyarat1;
+  if (text.includes("karbala")) return TRAVEL_IMAGES.iraq1;
+  if (text.includes("iraq") || text.includes("najaf") || text.includes("arbaeen")) return TRAVEL_IMAGES.iraq2;
+  if (text.includes("umrah") || text.includes("makkah") || text.includes("madinah") || pkg.tier) return TRAVEL_IMAGES.umrahHaj1;
+  if (text.includes("malaysia") || text.includes("kuala lumpur")) return TRAVEL_IMAGES.thailand1;
+  if (text.includes("thailand") || text.includes("bangkok")) return TRAVEL_IMAGES.thailand2;
+  if (text.includes("japan")) return TRAVEL_IMAGES.japan1;
+  if (text.includes("international") || text.includes("tour")) return TRAVEL_IMAGES.thailand1;
+  if (text.includes("visa") || text.includes("flight") || text.includes("ticket") || text.includes("travel service")) return TRAVEL_IMAGES.umrahHaj5;
+  return TRAVEL_IMAGES.umrahHaj1;
 }
 
 function renderUmrahCards(containerId, items) {
